@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>labe1</title>
+    <script>
+        function res()
+        { 
+            var sum = 0;
+            var n = Number(document.forms["form"].elements["g"].value);
+            var x = Number(document.forms["form"].elements["ge"].value);
+            if(x>(1/2))
+            {
+                for(var i = 0; i < n; i++)
+                {
+                    sum = sum + (((x-1)**(i+1))/((i+1)*((x+1)**(i+1))));
+                }
+            }
+            else
+            {
+                document.write("Неверный параметр в значении х")
+            }
+            document.writeln(sum);
+        }
+    </script>
+</head>
+<body>
+    <h3>введите число:</h3>
+    <form id = "form">
+        <label for = "">Введите n</label>
+        <input type = "text" id = "g">
+        <br>
+        <label for = "">Введите х</label>
+        <input type = "text" id = "ge">
+        <br>
+        <button onclick = "res()">Отправить</button>      
+    </form>  
+</body>
+</html>
